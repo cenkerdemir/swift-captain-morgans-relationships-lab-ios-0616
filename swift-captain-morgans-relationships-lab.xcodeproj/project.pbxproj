@@ -12,6 +12,18 @@
 		4C45CA921D3A9A7F0030A41D /* swift_captain_morgans_relationships_lab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C45CA901D3A9A7F0030A41D /* swift_captain_morgans_relationships_lab.xcdatamodeld */; };
 		4C45CA941D3A9A7F0030A41D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C45CA931D3A9A7F0030A41D /* Assets.xcassets */; };
 		4C45CA971D3A9A7F0030A41D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C45CA951D3A9A7F0030A41D /* LaunchScreen.storyboard */; };
+		7860F5D71D428E3A007E138C /* Pirate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5D51D428E3A007E138C /* Pirate+CoreDataProperties.swift */; };
+		7860F5D81D428E3A007E138C /* Pirate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5D61D428E3A007E138C /* Pirate.swift */; };
+		7860F5DB1D428E58007E138C /* Ship+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5D91D428E58007E138C /* Ship+CoreDataProperties.swift */; };
+		7860F5DC1D428E58007E138C /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5DA1D428E58007E138C /* Ship.swift */; };
+		7860F5DE1D428F6B007E138C /* PirateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5DD1D428F6B007E138C /* PirateTableViewController.swift */; };
+		7860F5E01D428F8C007E138C /* ShipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5DF1D428F8C007E138C /* ShipTableViewController.swift */; };
+		7860F5E21D428FC0007E138C /* ShipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5E11D428FC0007E138C /* ShipDetailViewController.swift */; };
+		7860F5E41D429121007E138C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5E31D429121007E138C /* DataStore.swift */; };
+		7860F5EF1D43C71D007E138C /* Engine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5ED1D43C71D007E138C /* Engine+CoreDataProperties.swift */; };
+		7860F5F01D43C71D007E138C /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5EE1D43C71D007E138C /* Engine.swift */; };
+		7860F5F41D43F0AE007E138C /* AddPirateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5F31D43F0AE007E138C /* AddPirateViewController.swift */; };
+		7860F5F61D43F134007E138C /* AddShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F5F51D43F134007E138C /* AddShipViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,18 @@
 		4C45CA931D3A9A7F0030A41D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C45CA961D3A9A7F0030A41D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C45CA981D3A9A7F0030A41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7860F5D51D428E3A007E138C /* Pirate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pirate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7860F5D61D428E3A007E138C /* Pirate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pirate.swift; sourceTree = "<group>"; };
+		7860F5D91D428E58007E138C /* Ship+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ship+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7860F5DA1D428E58007E138C /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		7860F5DD1D428F6B007E138C /* PirateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PirateTableViewController.swift; sourceTree = "<group>"; };
+		7860F5DF1D428F8C007E138C /* ShipTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipTableViewController.swift; sourceTree = "<group>"; };
+		7860F5E11D428FC0007E138C /* ShipDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipDetailViewController.swift; sourceTree = "<group>"; };
+		7860F5E31D429121007E138C /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		7860F5ED1D43C71D007E138C /* Engine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Engine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7860F5EE1D43C71D007E138C /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		7860F5F31D43F0AE007E138C /* AddPirateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPirateViewController.swift; sourceTree = "<group>"; };
+		7860F5F51D43F134007E138C /* AddShipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShipViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +88,20 @@
 		4C45CA881D3A9A7F0030A41D /* swift-captain-morgans-relationships-lab */ = {
 			isa = PBXGroup;
 			children = (
+				7860F5E31D429121007E138C /* DataStore.swift */,
+				7860F5ED1D43C71D007E138C /* Engine+CoreDataProperties.swift */,
+				7860F5EE1D43C71D007E138C /* Engine.swift */,
+				7860F5D91D428E58007E138C /* Ship+CoreDataProperties.swift */,
+				7860F5DA1D428E58007E138C /* Ship.swift */,
+				7860F5D51D428E3A007E138C /* Pirate+CoreDataProperties.swift */,
+				7860F5D61D428E3A007E138C /* Pirate.swift */,
 				4C45CA891D3A9A7F0030A41D /* AppDelegate.swift */,
 				4C45CA8D1D3A9A7F0030A41D /* Main.storyboard */,
+				7860F5F31D43F0AE007E138C /* AddPirateViewController.swift */,
+				7860F5F51D43F134007E138C /* AddShipViewController.swift */,
+				7860F5E11D428FC0007E138C /* ShipDetailViewController.swift */,
+				7860F5DF1D428F8C007E138C /* ShipTableViewController.swift */,
+				7860F5DD1D428F6B007E138C /* PirateTableViewController.swift */,
 				4C45CA901D3A9A7F0030A41D /* swift_captain_morgans_relationships_lab.xcdatamodeld */,
 				1B885D9D1D3FE64B0029DFFC /* Resources */,
 			);
@@ -148,8 +184,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7860F5D81D428E3A007E138C /* Pirate.swift in Sources */,
+				7860F5F01D43C71D007E138C /* Engine.swift in Sources */,
+				7860F5E41D429121007E138C /* DataStore.swift in Sources */,
+				7860F5DC1D428E58007E138C /* Ship.swift in Sources */,
+				7860F5F61D43F134007E138C /* AddShipViewController.swift in Sources */,
+				7860F5EF1D43C71D007E138C /* Engine+CoreDataProperties.swift in Sources */,
+				7860F5E21D428FC0007E138C /* ShipDetailViewController.swift in Sources */,
 				4C45CA921D3A9A7F0030A41D /* swift_captain_morgans_relationships_lab.xcdatamodeld in Sources */,
+				7860F5E01D428F8C007E138C /* ShipTableViewController.swift in Sources */,
+				7860F5D71D428E3A007E138C /* Pirate+CoreDataProperties.swift in Sources */,
+				7860F5F41D43F0AE007E138C /* AddPirateViewController.swift in Sources */,
 				4C45CA8A1D3A9A7F0030A41D /* AppDelegate.swift in Sources */,
+				7860F5DB1D428E58007E138C /* Ship+CoreDataProperties.swift in Sources */,
+				7860F5DE1D428F6B007E138C /* PirateTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

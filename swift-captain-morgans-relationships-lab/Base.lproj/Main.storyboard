@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AxG-62-bKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AxG-62-bKF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Pirates-->
         <scene sceneID="Dm9-Um-hhp">
             <objects>
-                <tableViewController id="uQf-x4-Xri" customClass="PiratesViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uQf-x4-Xri" customClass="PirateTableViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tpw-eM-u9r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,8 +29,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lTo-gP-Irt">
-                                            <rect key="frame" x="241" y="12" width="44" height="20.5"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Ships" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lTo-gP-Irt">
+                                            <rect key="frame" x="242.5" y="12" width="42.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,79 +48,139 @@
                             <outlet property="delegate" destination="uQf-x4-Xri" id="Z58-7R-Tzj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pirates" id="4sj-RJ-GDs"/>
+                    <navigationItem key="navigationItem" title="Pirates" id="4sj-RJ-GDs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J0J-AI-31F">
+                            <connections>
+                                <segue destination="kMn-G1-cd6" kind="modal" identifier="addNewPirate" id="pke-AJ-Oqf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5c-dS-QEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="572" y="64"/>
         </scene>
-        <!--Ship Detail View Controller-->
-        <scene sceneID="om3-T8-5Ag">
+        <!--Add Pirate View Controller-->
+        <scene sceneID="Ddk-Fk-46z">
             <objects>
-                <viewController id="89Y-7r-3Pi" customClass="ShipDetailViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kMn-G1-cd6" customClass="AddPirateViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8vs-2W-EXA"/>
-                        <viewControllerLayoutGuide type="bottom" id="WK3-Yj-zhl"/>
+                        <viewControllerLayoutGuide type="top" id="Fg2-TT-QsC"/>
+                        <viewControllerLayoutGuide type="bottom" id="04m-ND-5u2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3bX-mO-Hrg">
+                    <view key="view" contentMode="scaleToFill" id="nHW-Ox-B8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ship Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-W1-MIz">
-                                <rect key="frame" x="20" y="98" width="90" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5BE-Bz-6Fm">
+                                <rect key="frame" x="30" y="89" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orG-uN-9hp">
+                                <rect key="frame" x="145" y="156" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveNewPirate:" destination="kMn-G1-cd6" eventType="touchUpInside" id="XgX-2d-ibE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a new pirate name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiT-ZZ-GrQ">
+                                <rect key="frame" x="68" y="49" width="185" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdO-6U-UTH">
-                                <rect key="frame" x="118" y="98" width="182" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pirate Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agt-vr-geO">
-                                <rect key="frame" x="20" y="149" width="100" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyV-6T-Sex">
-                                <rect key="frame" x="128" y="149" width="172" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Propulsion Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meE-Ci-K0A">
-                                <rect key="frame" x="20" y="194" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM5-Vc-g5y">
-                                <rect key="frame" x="156" y="194" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-KN-pLs">
-                                <rect key="frame" x="128" y="98" width="182" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5BE-Bz-6Fm" firstAttribute="top" secondItem="YiT-ZZ-GrQ" secondAttribute="bottom" constant="19" id="4dO-5Y-q9z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5BE-Bz-6Fm" secondAttribute="trailing" constant="9" id="VAk-nb-KZP"/>
+                            <constraint firstItem="5BE-Bz-6Fm" firstAttribute="leading" secondItem="nHW-Ox-B8K" secondAttribute="leadingMargin" constant="14" id="WAb-jj-oLz"/>
+                            <constraint firstItem="YiT-ZZ-GrQ" firstAttribute="top" secondItem="Fg2-TT-QsC" secondAttribute="bottom" constant="29" id="Z2C-ID-a4i"/>
+                            <constraint firstItem="5BE-Bz-6Fm" firstAttribute="centerX" secondItem="orG-uN-9hp" secondAttribute="centerX" id="a4o-KF-m4C"/>
+                            <constraint firstItem="orG-uN-9hp" firstAttribute="top" secondItem="5BE-Bz-6Fm" secondAttribute="bottom" constant="37" id="azi-Z2-GSZ"/>
+                            <constraint firstItem="YiT-ZZ-GrQ" firstAttribute="centerX" secondItem="nHW-Ox-B8K" secondAttribute="centerX" id="sV1-NN-h6o"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cH0-aR-NDs"/>
                     <connections>
-                        <outlet property="pirateNameLabel" destination="yyV-6T-Sex" id="GKq-a9-Tc9"/>
-                        <outlet property="propulsionTypeLabel" destination="pM5-Vc-g5y" id="oAs-xj-SzZ"/>
-                        <outlet property="shipNameLabel" destination="84Z-KN-pLs" id="WWU-ON-P1M"/>
+                        <outlet property="newPirateName" destination="5BE-Bz-6Fm" id="Elm-Er-6xI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GYG-5C-0S1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cS-Vf-UQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621" y="64"/>
+            <point key="canvasLocation" x="837" y="811"/>
+        </scene>
+        <!--Add Ship View Controller-->
+        <scene sceneID="3SY-B7-sIg">
+            <objects>
+                <viewController id="6vb-Zu-C2f" customClass="AddShipViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7CI-tw-cX5"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dL-iC-C58"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZL1-aL-J4p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New Ship Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-4a-uNe">
+                                <rect key="frame" x="77" y="53" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Propulsion Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPQ-WZ-2nv">
+                                <rect key="frame" x="76" y="166" width="168" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDL-JQ-pbN">
+                                <rect key="frame" x="52" y="82" width="217" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-Jl-hDM">
+                                <rect key="frame" x="52" y="213" width="217" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A59-R4-GKb">
+                                <rect key="frame" x="143" y="299" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveNewShipTapped:" destination="6vb-Zu-C2f" eventType="touchUpInside" id="LJE-Eb-y3s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Moi-4a-uNe" firstAttribute="top" secondItem="7CI-tw-cX5" secondAttribute="bottom" constant="33" id="2vu-8b-eIF"/>
+                            <constraint firstItem="fDL-JQ-pbN" firstAttribute="top" secondItem="Moi-4a-uNe" secondAttribute="bottom" constant="8" symbolic="YES" id="59D-Ke-SmM"/>
+                            <constraint firstItem="Moi-4a-uNe" firstAttribute="centerX" secondItem="ZL1-aL-J4p" secondAttribute="centerX" id="5EG-m1-FmU"/>
+                            <constraint firstItem="fDL-JQ-pbN" firstAttribute="trailing" secondItem="9Ze-Jl-hDM" secondAttribute="trailing" id="6gh-Ba-VIl"/>
+                            <constraint firstItem="Moi-4a-uNe" firstAttribute="centerX" secondItem="fDL-JQ-pbN" secondAttribute="centerX" id="9yv-f6-P5e"/>
+                            <constraint firstItem="NPQ-WZ-2nv" firstAttribute="top" secondItem="fDL-JQ-pbN" secondAttribute="bottom" constant="54" id="IUg-yR-xvQ"/>
+                            <constraint firstItem="9Ze-Jl-hDM" firstAttribute="top" secondItem="NPQ-WZ-2nv" secondAttribute="bottom" constant="26" id="K9B-uk-OXN"/>
+                            <constraint firstItem="fDL-JQ-pbN" firstAttribute="leading" secondItem="9Ze-Jl-hDM" secondAttribute="leading" id="bsQ-9j-KDb"/>
+                            <constraint firstItem="Moi-4a-uNe" firstAttribute="trailing" secondItem="NPQ-WZ-2nv" secondAttribute="trailing" id="fgp-O9-2X0"/>
+                            <constraint firstItem="A59-R4-GKb" firstAttribute="top" secondItem="9Ze-Jl-hDM" secondAttribute="bottom" constant="56" id="hd2-0y-7tR"/>
+                            <constraint firstItem="fDL-JQ-pbN" firstAttribute="leading" secondItem="ZL1-aL-J4p" secondAttribute="leadingMargin" constant="36" id="rww-Q6-osO"/>
+                            <constraint firstItem="9Ze-Jl-hDM" firstAttribute="centerX" secondItem="A59-R4-GKb" secondAttribute="centerX" id="tOS-Od-iPr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PropulsionTypeText" destination="9Ze-Jl-hDM" id="fk6-CW-v3d"/>
+                        <outlet property="newShipNameText" destination="fDL-JQ-pbN" id="QyP-7l-bF9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXB-Nr-vCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="811"/>
         </scene>
         <!--Ships-->
         <scene sceneID="hft-09-HZg">
             <objects>
-                <tableViewController id="xkh-st-INB" customClass="ShipsViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xkh-st-INB" customClass="ShipTableViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OYq-Ul-kMD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,8 +200,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ANF-lY-j7k">
-                                            <rect key="frame" x="241" y="12" width="44" height="20.5"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Ship  Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ANF-lY-j7k">
+                                            <rect key="frame" x="213.5" y="12" width="71.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,7 +210,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="89Y-7r-3Pi" kind="push" identifier="shipDetailSegue" id="kKM-sv-Hw6"/>
+                                    <segue destination="dk6-PT-18L" kind="push" identifier="shipDetailSegue" id="oxG-TJ-8bD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,12 +220,101 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Ships" id="hJY-gC-SCw"/>
+                    <navigationItem key="navigationItem" title="Ships" id="hJY-gC-SCw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gql-dk-R1Z">
+                            <connections>
+                                <segue destination="6vb-Zu-C2f" kind="modal" identifier="addShipSegue" id="QZD-UM-tp0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgs-cj-iin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="64"/>
+        </scene>
+        <!--Ship Detail View Controller-->
+        <scene sceneID="xi5-oI-kNZ">
+            <objects>
+                <viewController id="dk6-PT-18L" customClass="ShipDetailViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7wu-RO-J6O"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZLa-D0-foo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Yd-hu-owp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-MO-f1H">
+                                <rect key="frame" x="139" y="132" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-rc-XRz">
+                                <rect key="frame" x="139" y="185" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekB-9i-TCz">
+                                <rect key="frame" x="139" y="237" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1a-Nd-UsM">
+                                <rect key="frame" x="20" y="131" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pirate Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-bV-rHZ">
+                                <rect key="frame" x="20" y="185" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propulsion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh1-9V-5TM">
+                                <rect key="frame" x="20" y="237" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="RLD-Rx-yYG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ghk-bV-rHZ" firstAttribute="baseline" secondItem="wxw-rc-XRz" secondAttribute="baseline" id="0Im-hu-DUS"/>
+                            <constraint firstItem="UMm-MO-f1H" firstAttribute="trailing" secondItem="wxw-rc-XRz" secondAttribute="trailing" id="1Ku-at-p02"/>
+                            <constraint firstItem="wxw-rc-XRz" firstAttribute="trailing" secondItem="ekB-9i-TCz" secondAttribute="trailing" id="4jn-YE-XJj"/>
+                            <constraint firstItem="Gh1-9V-5TM" firstAttribute="baseline" secondItem="ekB-9i-TCz" secondAttribute="baseline" id="8fe-Fr-nB4"/>
+                            <constraint firstItem="G1a-Nd-UsM" firstAttribute="leading" secondItem="ghk-bV-rHZ" secondAttribute="leading" id="D9j-BQ-W5d"/>
+                            <constraint firstItem="Gh1-9V-5TM" firstAttribute="top" secondItem="ghk-bV-rHZ" secondAttribute="bottom" constant="31" id="GQX-lZ-Vkw"/>
+                            <constraint firstItem="wxw-rc-XRz" firstAttribute="top" secondItem="UMm-MO-f1H" secondAttribute="bottom" constant="32" id="PXV-6M-Xu6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UMm-MO-f1H" secondAttribute="trailing" constant="4" id="SRt-JF-jPC"/>
+                            <constraint firstItem="G1a-Nd-UsM" firstAttribute="top" secondItem="7wu-RO-J6O" secondAttribute="bottom" constant="67" id="Yv9-1h-Cn3"/>
+                            <constraint firstItem="ghk-bV-rHZ" firstAttribute="top" secondItem="G1a-Nd-UsM" secondAttribute="bottom" constant="33" id="bEJ-aL-V1D"/>
+                            <constraint firstItem="ekB-9i-TCz" firstAttribute="leading" secondItem="Gh1-9V-5TM" secondAttribute="trailing" constant="33" id="ftI-hR-Qic"/>
+                            <constraint firstItem="ghk-bV-rHZ" firstAttribute="leading" secondItem="Gh1-9V-5TM" secondAttribute="leading" id="kEJ-Ak-r02"/>
+                            <constraint firstItem="UMm-MO-f1H" firstAttribute="leading" secondItem="wxw-rc-XRz" secondAttribute="leading" id="lb7-Ph-cFe"/>
+                            <constraint firstItem="G1a-Nd-UsM" firstAttribute="leading" secondItem="3Yd-hu-owp" secondAttribute="leadingMargin" constant="4" id="noj-ic-Sjo"/>
+                            <constraint firstItem="wxw-rc-XRz" firstAttribute="leading" secondItem="ekB-9i-TCz" secondAttribute="leading" id="oQP-sr-wrf"/>
+                            <constraint firstItem="UMm-MO-f1H" firstAttribute="leading" secondItem="G1a-Nd-UsM" secondAttribute="trailing" constant="26" id="vzX-Tf-ZmX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VkO-Wl-Ii7"/>
+                    <connections>
+                        <outlet property="pirateNameLabel" destination="wxw-rc-XRz" id="Ie6-sn-B7y"/>
+                        <outlet property="propulsionTypeLabel" destination="ekB-9i-TCz" id="P4D-KP-BwD"/>
+                        <outlet property="shipNameLabel" destination="UMm-MO-f1H" id="buz-UP-EGz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNM-jB-EbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i77-aH-kbT">
